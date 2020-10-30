@@ -19,12 +19,12 @@
 - has_many :selling_items
 - has_many :sold_items
 
-## seling_items テーブル
+## selling_items テーブル
 
-| Column       | Type         | Options                  |
+| Column       | Type         | Options                        |
 | ------       | ------       | -----------                    |
-| user         | preferences  | null: false, foreign_key: true |
-| item_name    | preferences  | null: false, foreign_key: true |
+| user         | references   | null: false, foreign_key: true |
+| item_name    | string       | null: false                    |
 | description  | text         | null: false                    |
 | category     | integer      | null: false                    |
 | status       | integer      | null: false                    |
@@ -56,7 +56,7 @@
 
 | Column            | Type       | Options                        |
 | ------            | ------     | -----------                    |
-| user_id           | preferences| null: false, foreign_key: true |
+| user              | references | null: false, foreign_key: true |
 | prefecture        | integer    | null: false                    |
 | adress_number     | string     | null: false                    |
 | city              | string     | null: false                    |
