@@ -10,6 +10,7 @@
 | last_name_1         | string  | null: false |
 | first_name_1        | string  | null: false |
 | last_name_2         | string  | null: false |
+| first_name_2        | string  | null: false |
 | birthday            | data    | null: false |
 
 
