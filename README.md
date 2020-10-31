@@ -56,9 +56,9 @@
 
 | Column            | Type       | Options                        |
 | ------            | ------     | -----------                    |
-| user              | references | null: false, foreign_key: true |
+| sold_item         | references | null: false, foreign_key: true |
 | prefecture_id     | integer    | null: false                    |
-| adress_number_id  | string     | null: false                    |
+| adress_number     | string     | null: false                    |
 | city              | string     | null: false                    |
 | house_number      | string     | null: false                    |
 | building_name     | string     |                                |
