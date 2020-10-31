@@ -26,11 +26,11 @@
 | user         | references   | null: false, foreign_key: true |
 | item_name    | string       | null: false                    |
 | description  | text         | null: false                    |
-| category     | integer      | null: false                    |
-| status       | integer      | null: false                    |
-| money_type   | integer      | null: false                    |
-| area         | integer      | null: false                    |
-| send_day     | integer      | null: false                    |
+| category_id  | integer      | null: false                    |
+| status_id    | integer      | null: false                    |
+| money_type_id| integer      | null: false                    |
+| area_id      | integer      | null: false                    |
+| send_day_id  | integer      | null: false                    |
 | price        | integer      | null: false                    |
 
 ### Association
@@ -57,8 +57,8 @@
 | Column            | Type       | Options                        |
 | ------            | ------     | -----------                    |
 | user              | references | null: false, foreign_key: true |
-| prefecture        | integer    | null: false                    |
-| adress_number     | string     | null: false                    |
+| prefecture_id     | integer    | null: false                    |
+| adress_number_id  | string     | null: false                    |
 | city              | string     | null: false                    |
 | house_number      | string     | null: false                    |
 | building_name     | string     |                                |
