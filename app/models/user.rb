@@ -7,10 +7,14 @@ class User < ApplicationRecord
   with_options presence: true do
 
     validates :nickname
-    validates :last_name_1, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: '全角ひらがな、全角カタカナ、漢字のみで入力して下さい' }
-    validates :first_name_1, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: '全角ひらがな、全角カタカナ、漢字のみで入力して下さい' }
-    validates :last_name_2, format: { with: /\A[ァ-ヶー－]+\z/, message: '全角カタカナのみで入力して下さい' }
-    validates :first_name_2, format: { with: /\A[ァ-ヶー－]+\z/, message: '全角カタカナのみで入力して下さい' }
+    NAME_REGEX1 = /\A[ぁ-んァ-ン一-龥]/
+    NAME_MESSAGE1 = '全角ひらがな、全角カタカナ、漢字のみで入力して下さい'
+    validates :last_name_1, format: { with: NAME_REGEX1, message: NAME_MESSAGE1 }
+    validates :first_name_1, format: { with: NAME_REGEX1, message: NAME_MESSAGE1 }
+    NAME_REGEX2 = /\A[ァ-ヶー－]+\z/
+    NAME_MESSAGE2 = '全角カタカナのみで入力して下さい'
+    validates :last_name_2, format: { with: NAME_REGEX2, message: NAME_MESSAGE2 }
+    validates :first_name_2, format: { with: NAME_REGEX2, message: NAME_MESSAGE2 }
     validates :birthday
       
   end
