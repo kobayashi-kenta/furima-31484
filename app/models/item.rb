@@ -13,7 +13,7 @@ class Item < ApplicationRecord
     validates :send_day_id
     PRICE_REGEX = /\A[0-9]+\z/
     PRICE_MESSAGE = '半角数字のみで入力して下さい'
-    validates :price_id,　format: {with: PRICE_REGEX, message: PRICE_MESSAGE}, 
+    validates :price, format: {with: PRICE_REGEX, message: PRICE_MESSAGE}, 
                           length: { minimum: 300, maximum: 9999999}
   end
 end
