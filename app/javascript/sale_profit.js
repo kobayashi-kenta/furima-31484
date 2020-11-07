@@ -3,7 +3,7 @@ function profit(){
   priceInput.addEventListener("input", () => {
     const inputValue = priceInput.value;
     const addProfitDom = document.getElementById("profit");
-    addProfitDom.innerHTML = Math.floor(inputValue - Math.floor(inputValue * 0.1));
+    addProfitDom.innerHTML = inputValue - Math.floor(inputValue * 0.1);
   })
 }
 window.addEventListener('load', profit);
