@@ -20,7 +20,7 @@ class Item < ApplicationRecord
     PRICE_REGEX = /\A[0-9]+\z/
     PRICE_MESSAGE = '半角数字のみで入力して下さい'
     validates :price, format: {with: PRICE_REGEX, message: PRICE_MESSAGE}, 
-    numericality: { only_integer: true, greater_than: 300, less_than: 9999999}  
+    numericality: { only_integer: true, greater_than: 300, less_than: 10000000}  
   end
 
 end
