@@ -19,7 +19,7 @@
 - has_many :selling_items
 - has_many :sold_items
 
-## selling_items テーブル
+## items テーブル
 
 | Column       | Type         | Options                        |
 | ------       | ------       | -----------                    |
