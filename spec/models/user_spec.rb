@@ -2,20 +2,20 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe '#create' do
-  before do
-    @user = FactoryBot.build(:user)
-  end
-  
-  context 'ユーザーテストコード正常系' do
+    before do
+      @user = FactoryBot.build(:user)
+    end
+
+    context 'ユーザーテストコード正常系' do
       it 'nickname,email,password,password_confirmation,last_name_1,first_name_1,last_name2,first_name_2,birthdayが存在すれば登録できること' do
         expect(@user).to be_valid
       end
-      
+
       it 'emailに＠を含んでいれば登録できること' do
         @user.email = 'abcdefghijkl@mnopqrstuvwxyz'
         expect(@user).to be_valid
       end
-      
+
       it 'passwordが6文字以上であれば登録できること' do
         @user.password = '1234aa'
         @user.password_confirmation = '1234aa'
@@ -28,7 +28,6 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
     end
-
 
     context 'ユーザーモデルテストコード異常系' do
       it 'nicknameが空では登録できないこと' do
@@ -62,8 +61,6 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include('Email is invalid')
       end
 
-
-
       it 'passwordが文５字以下では登録できないこと' do
         @user.password = '123aa'
         @user.password_confirmation = '123aa'
@@ -84,7 +81,6 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid')
       end
-
 
       it 'passwordとpassword_confirmationが一致していなければ登録できないこと' do
         @user.password = '123456aa'
