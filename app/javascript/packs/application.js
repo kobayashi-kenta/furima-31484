@@ -4,7 +4,8 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// 追加実装で必要になるかもしれないので残しておきます
+// require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../sale_fee")
