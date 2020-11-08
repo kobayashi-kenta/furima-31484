@@ -1,5 +1,5 @@
 function profit(){
-  const priceInput = document.getElementById("item-price")
+  const priceInput = document.getElementById('item-price');
   priceInput.addEventListener("input", () => {
     const inputValue = priceInput.value;
     const addProfitDom = document.getElementById("profit");
