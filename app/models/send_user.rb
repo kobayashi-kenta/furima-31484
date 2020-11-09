@@ -1,0 +1,2 @@
+class SendUser < ApplicationRecord
+end
