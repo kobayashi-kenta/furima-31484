@@ -1,7 +1,7 @@
 class CreateSendUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :send_users do |t|
-      t.references :item, null: false, foreign_key: true
+      t.references :order, null: false, foreign_key: true
       t.integer :area_id, null: false
       t.string :adress_number, null: false
       t.string :city, null: false

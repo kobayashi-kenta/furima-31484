@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_111450) do
   end
 
   create_table "send_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id", null: false
+    t.bigint "order_id", null: false
     t.integer "area_id", null: false
     t.string "adress_number", null: false
     t.string "city", null: false
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_111450) do
     t.string "phone_number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_send_users_on_item_id"
+    t.index ["order_id"], name: "index_send_users_on_order_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -92,5 +92,5 @@ ActiveRecord::Schema.define(version: 2020_11_09_111450) do
   add_foreign_key "items", "users"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"
-  add_foreign_key "send_users", "items"
+  add_foreign_key "send_users", "orders"
 end
