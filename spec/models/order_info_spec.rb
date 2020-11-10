@@ -37,7 +37,7 @@ RSpec.describe OrderInfo, type: :model do
     end
 
     it '都道府県が--では登録できないこと' do
-      @order_info.area_id = '1'
+      @order_info.area_id = 1
       @order_info.valid?
       expect(@order_info.errors.full_messages).to include('Area must be other than 1')
     end
