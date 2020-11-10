@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :order_create, only: %i[index create]
-
+  before_action :authenticate_user!, only: :index
   def index
     @order_info = OrderInfo.new
     redirect_to root_path if !user_signed_in? || current_user.id == @item.user_id || !@item.order.nil?
