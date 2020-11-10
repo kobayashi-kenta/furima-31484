@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
   def show; end
 
   def edit
-    redirect_to root_path if @item.order != nil
+    redirect_to root_path unless @item.order.nil?
   end
 
   def update
