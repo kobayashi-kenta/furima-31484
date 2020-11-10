@@ -9,6 +9,11 @@ RSpec.describe OrderInfo, type: :model do
     it 'user_id,item_id,area_id,adress_number,city,house_number,phone_number,building_name,tokenがあれば保存ができること' do
       expect(@order_info).to be_valid
     end
+
+    it 'user_id,item_id,area_id,adress_number,city,house_number,phone_number,tokenがあれば保存ができること' do
+      @order_info.building_name = nil
+      expect(@order_info).to be_valid
+    end
   end
 
   context '商品購入異常系テストコード' do
